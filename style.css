@@ -216,7 +216,14 @@ nav {
 .podcast-cards {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat (1, 160px);
   gap: 80px;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .card-num {
   color: rgba(0, 255, 136, 1);
@@ -228,6 +235,68 @@ nav {
 .card-description {
   font-size: 1rem;
   font-weight: 400;
+}
+
+/* why choose TeamWave */
+.team-container {
+  width: 80%;
+  margin: 0px auto;
+  padding: 120px 0;
+}
+.team-container > h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 40px;
+  text-align: center;
+}
+.team-card-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 270px);
+  gap: 30px;
+}
+.cards {
+  padding: 40px;
+  border-radius: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.cards > img {
+  height: 60px;
+  width: 60px;
+}
+.cards > h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 16px 0px;
+}
+.cards > p {
+  color: rgba(255, 255, 255, 1);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 24px;
+  mix-blend-mode: screen;
+}
+.card1 {
+  grid-column: 1 / 2;
+  grid-row: 1 / 3;
+}
+.card2 {
+  grid-column: 2 / 4;
+  grid-row: 1 / 2;
+}
+.card3 {
+  grid-column: 2 / 4;
+  grid-row: 2 / 3;
+}
+.card4 {
+  grid-column: 1 / span 2;
+  grid-row: 3 / span 1;
+}
+.card5 {
+  grid-column: 3 / span 1;
+  grid-row: 3 / span 1;
 }
 
 /* media query for small device */
@@ -302,6 +371,7 @@ nav {
     grid-template-columns: repeat(2, 1fr);
     gap: 40px;
   }
+
   .podcast-heading {
     font-size: 2rem;
   }
