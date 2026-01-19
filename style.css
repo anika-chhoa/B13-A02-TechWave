@@ -84,10 +84,21 @@ nav {
 /* banner design */
 .banner-container {
   background-image: url(./assets/hero-bg.png);
-  background-size: cover;
+  /* background-size: 100% calc(100% + 80px);
+  background-position: center; */
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
   width: 100%;
   height: 760px;
   position: relative;
+}
+.banner-holder {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid green;
 }
 
 .banner-content {
@@ -96,20 +107,23 @@ nav {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  position: absolute;
+  margin-top: 101px;
+  /* position: absolute;
   top: 10%;
-  right: 33%;
+  right: 33%; */
 }
 
 .micro-back {
+  width: 350px;
+  height: 350px;
   position: relative;
   z-index: 1;
 }
 .microphone {
   position: absolute;
   z-index: 2;
-  top: 15%;
-  right: 38%;
+  top: 25%;
+  right: 45.8%;
 }
 .new {
   width: 75px;
@@ -121,17 +135,12 @@ nav {
   color: rgba(26, 11, 46, 1);
   font-size: 1.2rem;
   font-weight: 600;
-  position:absolute;
-  z-index:3;
-  top:4.5%;
-  right:18%;
+  position: absolute;
+  z-index: 3;
+  top: 17%;
+  right: 39%;
 }
 
-/* .banner-content {
-  display: flex;
-  justify-content: center;
-  align-items: end;
-} */
 .banner-description {
   margin-top: 40px;
   text-align: center;
@@ -192,6 +201,7 @@ nav {
 
 /* media query for small device */
 @media screen and (max-width: 576px) {
+  /* navbar */
   .nav-container {
     width: 90%;
   }
@@ -204,11 +214,66 @@ nav {
   .nav-btn {
     display: none;
   }
+  /* banner */
+  .banner-container {
+    height: 370px;
+    align-items: start;
+  }
+  .banner-holder {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    /* padding:40px 20px; */
+  }
+  .banner-content {
+    max-width: 400px;
+    margin-top: 0px;
+    margin: 40px 20px;
+    align-items: top;
+  }
+
+  .micro-back {
+    width: 200px;
+    height: 200px;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .microphone {
+    max-width: 70px;
+    position: absolute;
+    z-index: 2;
+    top: 25%;
+    right: 42.3%;
+  }
+  .new {
+    top: 13%;
+    right: 28%;
+  }
+  .banner-description {
+    margin-top: 24px;
+  }
+  .banner-heading {
+    font-size: 2.5rem;
+  }
 }
 
 /* media query for medium device */
 @media screen and (min-width: 576px) and (max-width: 992px) {
   .nav-menu > ul {
     gap: 12px;
+  }
+  .banner-content{
+    height: 620px;
+  }
+  .microphone {
+    position: absolute;
+    z-index: 2;
+    top: 28%;
+    right: 42.1%;
+  }
+  .new {
+    top: 20%;
+    right: 31%;
   }
 }
