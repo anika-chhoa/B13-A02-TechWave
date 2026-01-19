@@ -32,7 +32,7 @@ nav {
   border-bottom: 1px solid rgba(65, 37, 103, 1);
 }
 .nav-container {
-  width:80%;
+  width: 80%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -76,3 +76,27 @@ nav {
   font-weight: 600;
 }
 
+.hamburger-icon {
+  display: none;
+}
+
+@media screen and (max-width: 576px) {
+  .nav-container {
+    width: 90%;
+  }
+  .hamburger-icon {
+    display: inline;
+  }
+  .nav-menu {
+    display: none;
+  }
+  .nav-btn {
+    display: none;
+  }
+}
+
+@media screen and (min-width:576px) and (max-width:992px) {
+    .nav-menu>ul {
+        gap:12px;
+    }
+}
