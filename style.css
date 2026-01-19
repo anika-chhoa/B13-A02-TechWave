@@ -84,8 +84,6 @@ nav {
 /* banner design */
 .banner-container {
   background-image: url(./assets/hero-bg.png);
-  /* background-size: 100% calc(100% + 80px);
-  background-position: center; */
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
@@ -98,7 +96,6 @@ nav {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid green;
 }
 
 .banner-content {
@@ -108,9 +105,6 @@ nav {
   justify-content: center;
   align-items: center;
   margin-top: 101px;
-  /* position: absolute;
-  top: 10%;
-  right: 33%; */
 }
 
 .micro-back {
@@ -198,6 +192,43 @@ nav {
   font-size: 1rem;
   font-weight: 600;
 }
+/* podcast section */
+.podcast-container {
+  width: 80%;
+  margin: 50px auto 120px;
+  text-align: center;
+}
+.podcast-heading-box {
+  margin-bottom: 160px;
+}
+.podcast-heading {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+.podcast-sub-heading1,
+.podcast-sub-heading2 {
+  font-size: 1rem;
+  font-weight: 400;
+  margin-bottom: 48px;
+}
+
+.podcast-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 80px;
+}
+.card-num {
+  color: rgba(0, 255, 136, 1);
+  font-size: 3rem;
+  font-weight: 900;
+  text-align: center;
+  margin-bottom: 16px;
+}
+.card-description {
+  font-size: 1rem;
+  font-weight: 400;
+}
 
 /* media query for small device */
 @media screen and (max-width: 576px) {
@@ -238,7 +269,7 @@ nav {
     position: relative;
     z-index: 1;
   }
-  
+
   .microphone {
     max-width: 70px;
     position: absolute;
@@ -256,6 +287,27 @@ nav {
   .banner-heading {
     font-size: 2.5rem;
   }
+  /* podcast section */
+  .podcast-container {
+    width: 100%;
+    padding: 40px 20px;
+  }
+  .podcast-sub-heading1 {
+    margin-bottom: 16px;
+    br {
+      display: none;
+    }
+  }
+  .podcast-cards {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+  }
+  .podcast-heading {
+    font-size: 2rem;
+  }
+  .podcast-heading-box {
+    margin-bottom: 80px;
+  }
 }
 
 /* media query for medium device */
@@ -263,7 +315,7 @@ nav {
   .nav-menu > ul {
     gap: 12px;
   }
-  .banner-content{
+  .banner-content {
     height: 620px;
   }
   .microphone {
@@ -275,5 +327,23 @@ nav {
   .new {
     top: 20%;
     right: 31%;
+  }
+  /* podcast section */
+  .podcast-cards {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+  }
+  .podcast-container {
+    width: 80%;
+    margin: 40px auto;
+  }
+  .podcast-heading-box {
+    margin-bottom: 10px;
+  }
+  .podcast-sub-heading1 {
+    margin-bottom: 18px;
+    br {
+      display: none;
+    }
   }
 }
