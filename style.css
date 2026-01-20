@@ -299,11 +299,11 @@ nav {
   grid-column: 3 / span 1;
   grid-row: 3 / span 1;
 }
+/* featured episode section */
 .feature-container {
   width: 80%;
   max-width: 1440px;
   margin: 120px auto;
-  border: 1px solid red;
 }
 .feature-container > h1 {
   text-align: center;
@@ -317,26 +317,58 @@ nav {
   gap: 30px;
 }
 .episode-card {
+  border-radius: 24px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .youtube {
-  max-width: 380px;
-  border-radius: 24px 0px;
+  position: relative;
 }
+.youtube-play {
+  position: absolute;
+  inset: 0;
+  cursor: pointer;
+}
+
+.play-holder {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  background: linear-gradient(
+    47.64deg,
+    rgba(247, 233, 63, 1),
+    rgba(251, 9, 180, 1),
+    rgba(145, 0, 248, 1)
+  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 33%;
+  left: 40%;
+}
+.play {
+  width: 50px;
+  height: 50px;
+}
+#video-1:target + .youtube-play,
+#video-2:target + .youtube-play,
+#video-3:target + .youtube-play {
+  display: none;
+}
+
 .episode-description {
-  max-width: 380px;
   padding: 24px;
-  border-radius: 0px 24px;
 }
-.episode-description > p {
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin-bottom: 12px;
-}
+
 .episode-description > h1 {
   font-size: 1.5rem;
   font-weight: 700;
   margin-bottom: 12px;
 }
+
 .episode-description > p {
   color: rgba(255, 255, 255, 1);
   font-size: 1rem;
@@ -406,7 +438,7 @@ nav {
   }
   .new {
     top: 13%;
-    right: 28%;
+    right: 23%;
   }
   .banner-description {
     margin-top: 24px;
@@ -419,6 +451,10 @@ nav {
     width: 100%;
     padding: 40px 20px;
     margin: 40px 0px 0px 0px;
+    border: 0px solid red;
+  }
+  .podcast-heading-box {
+    margin-bottom: 80px;
   }
   .podcast-sub-heading1 {
     margin-bottom: 16px;
@@ -447,11 +483,13 @@ nav {
     font-size: 2rem;
     margin-bottom: 16px;
   }
-  .team-card-container {
+  .team-card-container,
+  .episode-card-container {
     display: grid;
     grid-template-columns: 1fr;
     /* grid-template-rows: repeat(1, 330px); */
     gap: 16px;
+    justify-items: center;
   }
   .cards {
     padding: 24px;
@@ -470,6 +508,27 @@ nav {
   }
   .cards > h2 {
     font-size: 1.37rem;
+  }
+  /* featured section */
+  .feature-container {
+    width: 100%;
+    padding: 40px 20px;
+    margin: 0px auto;
+  }
+  .feature-container > h1 {
+    font-size: 2rem;
+    margin-bottom: 24px;
+  }
+
+  .episode-description {
+    width: 100%;
+    /* max-width: 380px; */
+    padding: 16px;
+    height: 170px;
+    box-sizing: border-box;
+  }
+  .episode-description > h1 {
+    font-size: 1.25rem;
   }
 }
 
@@ -508,5 +567,55 @@ nav {
     br {
       display: none;
     }
+  }
+  /* why choose teamWave */
+  .team-container > h1,
+  .feature-container > h1 {
+    font-size: 2.5rem;
+    margin-bottom: 24px;
+  }
+  .team-card-container,
+  .episode-card-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    justify-items: center;
+  }
+  .cards {
+    padding: 24px;
+    border-radius: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .card1,
+  .card2,
+  .card3,
+  .card4,
+  .card5 {
+    grid-column: auto;
+    grid-row: auto;
+  }
+  .cards > h2 {
+    font-size: 1.5rem;
+  }
+  /* featured section */
+  .feature-container {
+    width: 80%;
+    margin: 80px auto;
+  }
+
+  .episode-card-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    justify-items: center;
+  }
+
+  .episode-description {
+    width: 100%;
+  }
+  .episode-description > h1 {
+    font-size: 1.5rem;
   }
 }
