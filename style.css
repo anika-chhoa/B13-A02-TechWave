@@ -152,7 +152,7 @@ nav {
   z-index: 3;
   top: 17%;
   right: 39%;
-  animation: badge 2.5s infinite ease-in-out;
+  animation: badge 2s infinite ease-in-out;
 }
 @keyframes badge {
   0% {
@@ -302,6 +302,7 @@ nav {
   flex-direction: column;
   justify-content: center;
   transition: transform 0.7s ease;
+  isolation: isolate;
 }
 .cards:hover {
   transform: scale(1.05) translateY(-4px);
@@ -321,7 +322,7 @@ nav {
   font-size: 1rem;
   font-weight: 400;
   line-height: 24px;
-  mix-blend-mode: screen;
+  mix-blend-mode: multiply;
 }
 .card1 {
   grid-column: 1 / 2;
@@ -368,6 +369,7 @@ nav {
   flex-direction: column;
   justify-content: flex-start;
   transition: transform 0.5s ease;
+  isolation: isolate;
 }
 .episode-card:hover {
   transform: scale(1.1) translateY(-4px);
@@ -407,11 +409,7 @@ nav {
   width: 50px;
   height: 50px;
 }
-/* #video-1:target ~ .youtube-play,
-#video-2:target ~ .youtube-play,
-#video-3:target ~ .youtube-play {
-  display: none;
-} */
+
 #video-1:checked + iframe + .youtube-play,
 #video-2:checked + iframe + .youtube-play,
 #video-3:checked + iframe + .youtube-play {
@@ -428,12 +426,13 @@ nav {
 }
 
 .episode-description > p {
-  color: rgba(255, 255, 255, 1);
+  color: rgb(193, 191, 191);
   font-size: 1rem;
   font-weight: 400;
-  mix-blend-mode: screen;
+  mix-blend-mode: multiply;
   margin-bottom: 12px;
 }
+
 .time-container {
   display: flex;
   gap: 6px;
@@ -460,6 +459,7 @@ nav {
   gap: 24px;
   padding: 40px;
   border-radius: 40px;
+  isolation: isolate;
 }
 .host-description > h2 {
   font-size: 2rem;
@@ -468,6 +468,7 @@ nav {
 }
 .host-description > p {
   margin-bottom: 16px;
+  mix-blend-mode: multiply;
 }
 .contact-icons {
   display: flex;
@@ -491,6 +492,7 @@ nav {
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
+  overflow: hidden;
 }
 .footer-info {
   padding: 120px;
@@ -577,22 +579,23 @@ nav {
   }
 
   .micro-back {
-    width: 200px;
-    height: 200px;
+    width: 195px;
+    height: 195px;
     position: relative;
     z-index: 1;
   }
 
   .microphone {
-    max-width: 70px;
+    max-width: 65px;
     position: absolute;
     z-index: 2;
     top: 25%;
-    right: 42.3%;
+    right: 43%;
   }
   .new {
+    width: 70px;
     top: 13%;
-    right: 23%;
+    right: 25.5%;
   }
   .banner-description {
     margin-top: 24px;
@@ -690,6 +693,7 @@ nav {
   .host-container {
     width: 100%;
     padding: 0px 20px 40px;
+    margin: 0px;
   }
   .host-card {
     gap: 16px;
@@ -703,7 +707,7 @@ nav {
   /* footer section */
   .footer-container {
     background-size: cover;
-    min-height: 250px;
+    /* min-height: 250px; */
   }
   .footer-info {
     padding: 40px 20px;
@@ -713,9 +717,12 @@ nav {
     margin-bottom: 24px;
   }
   .footer-icons-holder {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 21px;
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-content: center;
+    gap: 20px;
     margin-bottom: 24px;
   }
 }
@@ -806,5 +813,23 @@ nav {
   }
   .episode-description > h1 {
     font-size: 1.5rem;
+  }
+
+  .host-container {
+    margin: 0px auto 40px;
+  }
+  
+  .footer-container{
+    margin:0px;
+  }
+  .footer-info{
+    padding:40px;
+  }
+  .footer-info > h1 {
+    font-size: 3rem;
+    margin-bottom: 24px;
+  }
+  .footer-icons-holder {
+    margin-bottom: 18px;
   }
 }
