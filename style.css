@@ -10,6 +10,7 @@
 }
 body {
   max-width: 1600px;
+  margin: 0 auto;
 }
 .bg-primary {
   background-color: rgba(26, 11, 46, 1);
@@ -300,7 +301,7 @@ nav {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  transition: transform 0.5 ease;
+  transition: transform 0.7s ease;
 }
 .cards:hover {
   transform: scale(1.05) translateY(-4px);
@@ -365,7 +366,7 @@ nav {
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   transition: transform 0.5s ease;
 }
 .episode-card:hover {
@@ -374,10 +375,14 @@ nav {
 .youtube {
   position: relative;
 }
+.youtube iframe {
+  display: block;
+}
 .youtube-play {
   position: absolute;
   inset: 0;
   cursor: pointer;
+  pointer-events: none;
 }
 
 .play-holder {
@@ -396,17 +401,22 @@ nav {
   position: absolute;
   top: 33%;
   left: 40%;
+  pointer-events: auto;
 }
 .play {
   width: 50px;
   height: 50px;
 }
-#video-1:target + .youtube-play,
-#video-2:target + .youtube-play,
-#video-3:target + .youtube-play {
+/* #video-1:target ~ .youtube-play,
+#video-2:target ~ .youtube-play,
+#video-3:target ~ .youtube-play {
+  display: none;
+} */
+#video-1:checked + iframe + .youtube-play,
+#video-2:checked + iframe + .youtube-play,
+#video-3:checked + iframe + .youtube-play {
   display: none;
 }
-
 .episode-description {
   padding: 24px;
 }
@@ -415,7 +425,6 @@ nav {
   font-size: 1.5rem;
   font-weight: 700;
   margin-bottom: 12px;
-  text-align: center;
 }
 
 .episode-description > p {
