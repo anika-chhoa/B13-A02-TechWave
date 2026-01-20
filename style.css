@@ -131,7 +131,7 @@ nav {
   position: absolute;
   z-index: 2;
   top: 25%;
-  right: 45.9%;
+  right: 46.2%;
   transition: transform 0.5s ease-in;
 }
 .microphone:hover {
@@ -818,12 +818,12 @@ nav {
   .host-container {
     margin: 0px auto 40px;
   }
-  
-  .footer-container{
-    margin:0px;
+
+  .footer-container {
+    margin: 0px;
   }
-  .footer-info{
-    padding:40px;
+  .footer-info {
+    padding: 40px;
   }
   .footer-info > h1 {
     font-size: 3rem;
